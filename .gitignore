@@ -1,0 +1,9 @@
+*.o
+*.a
+*.so
+hguidemo/diagram
+hguidemo/hguidemo
+hguidemo/hguidemsh
+hguidemo/screensav
+hguidemo/simplewin
+hguidemo/simplewsh
