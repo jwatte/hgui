@@ -103,7 +103,7 @@ char* getTitle        (hWindow *hw); //return window-title
 void  setContrast     (hWindow *hw, float contrast); //acceptable values between: 0.0..1.0 (if value is outside range, gets truncated)
 void  setTitle        (hWindow *hw, char *title);
 void  setIconXPM      (hWindow *hw, char *xpm[]); //only XPM with max. 64 colours is supported
-void  setClass        (hWindow *hw, char *class, char *name); //'name' here is not titlebar (WM_NAME) but identification for the X-server
+void  setClass        (hWindow *hw, char *cls, char *name); //'name' here is not titlebar (WM_NAME) but identification for the X-server
 void  setWinCallback  (hWindow *hw, void (*callback)() ); //set window-callback afterwards
 
 void  iconifyWindow   (hWindow *hw);

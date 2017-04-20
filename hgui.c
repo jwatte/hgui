@@ -314,6 +314,7 @@ int dynCoordY(hWindow *hw, int y);
 TextDim drawTextScrollFrame(hWindow *hw, Widget *wp, int x1, int y1, int x2, int y2, char *text);
 void cleanUpRect(hWindow *hw, int x1o, int y1o, int x2o, int y2o,  int x1, int y1, int x2, int y2);
 void refreshWidget(Widget *w);
+Bool putAnimXPMframe(hWindow *hw, int id, int x, int y, unsigned long transpcol, void* xpmlist[], int framenumber );
 
 //------------------------- basic GUI routines -------------------------
 XPMstruct XPMtoPixels(char* source[], unsigned long bgcol) //only suitable for XPMs with around max. 50 colours (single-character colour-lookups)
@@ -1013,8 +1014,9 @@ XPMstruct putXPM(hWindow *hw, int x, int y, char* xpm[], unsigned long bgcol, in
 TextDim drawCenText(hWindow *hw, int x, int y, int w, int h, char *text, unsigned long fgcol, XFontStruct *font) //draw text centered into x,y,w,h rectangle
 {
     //get dimensions of string to pos then shift text by needed amount to be aligned to center of bounding box given as parameters
-    if(text==NULL) return;
-    TextDim dim=getTextDim(text,font);
+    TextDim dim = { 0 };
+    if(text==NULL) return dim;
+    dim=getTextDim(text,font);
     dim.x=x+(w-dim.w)/2;
     dim.y=y+(h-dim.ascent)/2;
     setClipRegion(hw,x,y,x+w,y+h);
@@ -2782,7 +2784,7 @@ void eventLoop (hWindow *hw, void (*callback)(), void* argptr ) //a custom funct
                 }
 #endif //HGUI_CHILDWINDOWS
 
-                if(callback!=NULL) callback(hw,argptr); //custom loop-callback for main program. if NULL, nothing happens here
+                if((void(*)())callback!=NULL) callback(hw,argptr); //custom loop-callback for main program. if NULL, nothing happens here
 
                 usleep(REFRESHDELAY);
             }
