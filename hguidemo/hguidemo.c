@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
 //======================================================================
 // demonstration program for Hermit-GUI
 //=====================================
