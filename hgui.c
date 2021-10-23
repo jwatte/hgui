@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
 // Hermit simple GUI toolkit (with C and Bash support), mainly for Herminux
 //=========================================================================
 

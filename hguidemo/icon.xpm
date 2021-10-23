@@ -1,4 +1,5 @@
 /* XPM */
+// SPDX-License-Identifier: GPL-2.0-or-later
 static char *icon_xpm[] = {
 "32 32 50 1",
 "A	c #000000",

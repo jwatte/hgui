@@ -1,4 +1,4 @@
-
+// SPDX-License-Identifier: GPL-2.0-or-later
 //======================================================================
 //HermitGUI header-file to include in programs (or use as documentation)
 //======================================================================

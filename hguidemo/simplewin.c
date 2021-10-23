@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
 //simplest hgui application, an empty window with window-icon
 
 #include <hgui.h>
